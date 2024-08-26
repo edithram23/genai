@@ -1,0 +1,10 @@
+langchain_community
+langchain_core
+langchain
+langchain-openai
+langchain-experimental
+tiktoken
+pypdf
+faiss-cpu
+streamlit
+openai

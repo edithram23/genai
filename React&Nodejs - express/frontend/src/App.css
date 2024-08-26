@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Sixtyfour&display=swap');
+html,body{
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  color: white;
+  background-color: #343540;
+}
+
+.MainContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.Page{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  z-index:1;
+  
+}
+.Header1{
+  float: left;
+  height: max-content;
+  width:20%;
+  background-color: #1f2123;
+  height: 100vh;
+  border: 0.5px solid black;
+  display:flex;
+  flex-direction: column;
+  
+}
+
+.chatbutton{
+  padding-top: 20px;
+  position: relative;
+  align-self: center;
+}
+
+.newchat{
+    background-color: #333; 
+    color: white;           
+    border: 2px solid white;
+    border-radius: 5px;      
+    padding: 10px 15px;      
+    display: flex;           
+    align-items: center;     
+    cursor: pointer;         
+    font-size: 16px;         
+    width: 280px;
+    margin: auto;
+    margin-left: 5px;
+    height: 70px;
+  }
+  .plus-icon {
+    margin-right: 8px;       /* Space between + icon and text */
+    font-weight: bold;       /* Make the + icon bold */
+    font-size: 18px;         /* Slightly larger for emphasis */
+  }
+  
+  .new-chat-button:hover {
+    background-color: #555;  /* Change background on hover */
+  }
+
+.contextheading{
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+  font-family: "DM Serif Text",serif;
+  font-weight: 10;
+  margin-left: 20px;
+  color: whitesmoke;
+  
+}
+.context{
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  row-gap: 10px;
+  margin-right: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.contextbox{
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(0, 213, 255);
+  height: 100px;
+  width: 150px;
+  /* padding-top: 2px; */
+  font-size: 14px;
+  padding: 6px;
+}
+
+.Header2{
+  float: center;
+  height: max-content;
+  width:50%;
+  background-color:#343540;
+  height: 100vh;
+  border: 0.5px solid black;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-between; */
+}
+
+.Header3{
+  float: right;
+  height: max-content;
+  width:30%;
+  background-color: #1f2123;
+  height: 100vh;
+  border: 0.5px solid black;
+}
+
+.Input {
+  display: flex;
+  flex-direction: column; /* Stack the child divs vertically */
+  height: 100%; /* Make the parent div take up the full available height */
+}
+
+.Content {
+  flex: 1; /* This will push the content to the top and take available space */
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  /* padding-bottom: 20px; 
+  padding-top: 10px;
+  padding-left: 40px;
+  padding-right: 40px; */
+  height: 40%;
+  
+}
+.bubble {
+  width: 8vmin;
+  height: 8vmin;
+  background: hsl(212, 100%, 71%);
+  border: calc(10vmin * 0.09) solid hsl(212, 100%, 81%);
+  position: absolute;
+  top: calc(8% + 5vmin + 20px); /* Adjusted to position below with a gap */
+  left: calc(26% - (10vmin * 0.5)); /* Centered horizontally */
+  overflow: visible;
+  border-radius: 48% 40% 62% 47% / 61% 49% 64% 43%;
+  animation: rotate 35s infinite linear;
+  z-index: 1;
+}
+
+.bubble::before {
+  content: '';
+  position: absolute;
+  top: calc(10vmin * 0.1);
+  left: calc(10vmin * 0.1);
+  width: calc(100% - (10vmin * 0.3));
+  height: calc(100% - (10vmin * 0.3));
+  background: hsl(212, 100%, 51%);
+  border: calc(10vmin * 0.065) solid hsl(212, 100%, 61%);
+  border-radius: 41% 40% 50% 55% / 49% 52% 51% 43%;
+  z-index: -2;
+  animation: rotateBefore 1s infinite linear;
+}
+
+.bubble::after {
+  content: '';
+  position: absolute;
+  top: calc(10vmin * 0.2);
+  left: calc(10vmin * 0.2);
+  width: calc(100% - (10vmin * 0.5));
+  height: calc(100% - (10vmin * 0.5));
+  background: hsl(212, 100%, 31%);
+  border: calc(10vmin * 0.05) solid hsl(212, 100%, 41%);
+  border-radius: 42% 63% 51% 60% / 47% 62% 42% 52%;
+  animation: rotateAfter 2s infinite linear;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(1turn); }
+}
+
+@keyframes rotateBefore {
+  0% { transform: rotate(-1turn); }
+}
+
+@keyframes rotateAfter {
+  0% { transform: rotate(2turn); }
+}
+
+.qa{
+  height: 100%;
+  width: 100%;
+  
+}
+.question{
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  padding-bottom: 20px; /* Optional: Adds some space between the content and the button-text */
+  padding-top: 10px;
+  padding-left: 80px;
+  padding-right: 80px;
+  
+}
+.answer{
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  background-color: #424652;
+  padding-bottom: 20px; /* Optional: Adds some space between the content and the button-text */
+  padding-top: 10px;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+.button-text {
+  display: flex;
+  justify-content: center; /* Center the input and button horizontally */
+  align-items: center;
+  padding: 10px 20px; /* Adds padding around the input and button */
+  margin-top: auto; 
+  margin-bottom: 20px;
+}
+
+.button-text input {
+  width: 600px; /* Adjust the width as needed */
+  padding: 10px;
+  font-size: 18px;
+  border: 1px solid rgba(63,64,77,255);
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+  outline: none; /* Remove default outline */
+  margin-right: 20px;
+  background-color: rgba(63,64,77,255);
+  color: whitesmoke;
+}
+.button-text button {
+  background-color: #383838;
+  border: 1px solid #383838;
+  padding: 10px;
+  font-size: 18px;
+  color: #ffffff;
+  border-radius: 5px;
+  box-shadow:  0 4px 4px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.button-text button:hover {
+  background-color: #505050;
+}
+
