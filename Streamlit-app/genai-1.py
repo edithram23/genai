@@ -182,13 +182,12 @@ if st.sidebar.button("Chatbot"):
 
 # Welcome Tab --------------------------------------------------------------------------------------------------------------------
 if st.session_state.tab == "Welcome":
-    
+    st.title("Summarize Transcripts and Download")
     st.write("Upload your PDF file:")
     uploaded_file = st.file_uploader("Choose a PDF file", type="pdf")
     
     if uploaded_file is not None:
         # Read the PDF and store it in session_state
-        st.session_state.vectorIndex = None
         file_path = "uploaded_file.pdf"
         with open(file_path, "wb") as f:
             f.write(uploaded_file.getbuffer())
@@ -251,11 +250,11 @@ elif st.session_state.tab == "Opening remarks summary":
             dic = {"name": i, "text": output_chat.content}
             local.append(dic)
             st.session_state.cost = cost_cal(output_chat)
-            with st.sidebar:
-                st.write("Token counter :",st.session_state.input_tok+st.session_state.output_tok)
-                st.write("Cost : ", st.session_state.cost)
         st.session_state.local_data = local
-        st.session_state.processed = True  
+        st.session_state.processed = True
+        with st.sidebar:
+                st.write("Token counter :",st.session_state.input_tok+st.session_state.output_tok)
+                st.write("Cost : ", st.session_state.cost)  
     with st.expander('Who said what?'):
         st.data_editor(st.session_state.local_data, disabled=True)
 
@@ -266,9 +265,6 @@ elif st.session_state.tab == "Opening remarks summary":
         chain = prompt | llm
         output_chat = chain.invoke({"text": ''.join(st.session_state.speaker_out)})
         st.session_state.cost = cost_cal(output_chat)
-        with st.sidebar:
-                st.write("Token counter :",st.session_state.input_tok+st.session_state.output_tok)
-                st.write("Cost : ", st.session_state.cost)
         pattern = re.compile(r'\d+\.\s*\*\*(.*?)\*\*\s*-?\s*(.*?)(?=\d+\.\s*\*\*|\Z)', re.DOTALL)
         matches = pattern.findall(output_chat.content)
         st.session_state.sections = [f"**{match[0]}**\n- {match[1].strip()}" for match in matches]
@@ -361,8 +357,7 @@ elif st.session_state.tab == "Question answer summary":
     st.text("This page will help you summarize Q&A")
     st.text("To get started, expand raw text section for overview")
     if(not st.session_state.questions_generated):
-        
-        with st.expander(border=True):
+        with st.expander('Questions'):
             topic_wise_output=[]
             counter = 1
             sno_list = []
@@ -395,9 +390,10 @@ elif st.session_state.tab == "Question answer summary":
                                 'company':company_list,
                                 'status':status_list
                             })
+            #post processing
             df['company'].replace('N/A', pd.NA, inplace=True)
             df['company'] = df.groupby('Speaker')['company'].apply(lambda x: x.ffill().bfill())
-            
+
             df=df[df['Q/A']!='N/A'].reset_index().drop("index",axis=1)
            
             st.data_editor(df,disabled=True)
