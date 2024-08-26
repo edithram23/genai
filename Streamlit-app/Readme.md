@@ -12,7 +12,7 @@ This project is a replication task developed for an internship. It involves anal
 
 ## Overview
 
-This project utilizes the LangChain framework along with OpenAI's language models to process and analyze earnings call transcripts. The primary objectives are to extract structured information, identify key topics, summarize speaker statements, and classify the dialogue into questions and answers. 
+This project utilizes the LangChain framework along with OpenAI's language models to process and analyze earnings call transcripts. The primary objectives are to extract structured information, identify key topics, summarize speaker statements, classify the dialogue into questions & answers and a RAG chatbot is employed to provide interactive and contextually accurate responses to user queries. 
 
 ## Technologies Used
 
@@ -20,6 +20,7 @@ This project utilizes the LangChain framework along with OpenAI's language model
 - **LangChain**: A toolkit for building applications with large language models.
 - **OpenAI (GPT-4o-mini)**: Language model for generating responses and extracting information.
 - **FAISS**: A library for efficient similarity search and clustering of dense vectors.
+- **RAG (Retrieval-Augmented Generation) Chatbot**: A chatbot that combines retrieval and generation techniques to provide contextually accurate responses.
 - **Python Libraries**: `re`, `pandas`, `dotenv` for regular expressions, data handling, and environment management, respectively.
 
 ## Features
@@ -39,12 +40,15 @@ This project utilizes the LangChain framework along with OpenAI's language model
 4. **Speaker-Specific Text Extraction**:
    - Isolates and outputs all statements made by a specific speaker.
    - Supports multiple speakers, maintaining accurate association with the respective speaker.
+5. **RAG Chatbot**:
+   - Implements a Retrieval-Augmented Generation (RAG) chatbot to answer user queries based on the transcript content.
+   - Uses FAISS to retrieve relevant document segments, providing contextually accurate and informative responses.
 
-5. **Interactive User Interface**:
+6. **Interactive User Interface**:
    - Built using Streamlit for an interactive and user-friendly experience.
    - Sidebars for navigation and buttons for specific tasks like processing the PDF, generating topics, and summarizing.
 
-6. **Cost Calculation**:
+7. **Cost Calculation**:
    - Calculates token usage and cost estimation based on model usage.
 
 ## Installation
