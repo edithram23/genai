@@ -83,3 +83,12 @@ The application will start, and you can access it via your web browser at `http:
 - If the question is valid, the app displays the question, answer, and clickable source boxes.
 - Clicking on a source box fetches the PDF from the server using a URL and displays it using an embedded PDF viewer.
 - The backend Express server handles fetching the actual PDF files from the URLs.
+
+## Output Reference Image
+
+**On Loading**
+![image](https://github.com/user-attachments/assets/a07bf058-af25-439c-b9c9-98273e66e818)
+**Final Output**
+![image](https://github.com/user-attachments/assets/8362dd36-5a03-46f1-bfc4-1b8abe584501)
+
+
