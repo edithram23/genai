@@ -1,4 +1,4 @@
-# Earnings Call Transcript Analysis
+# Call Transcript Analysis
 
 This project is a replication task developed for an internship. It involves analyzing earnings call transcripts using various NLP techniques and models. The goal is to extract, summarize, and categorize information effectively, with a focus on important topics and speaker-specific details.
 
