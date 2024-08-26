@@ -1,7 +1,6 @@
 # React PDF Viewer Application
 
-This project is a Replica of a web application built with React and Node.js that allows users to input text, fetch corresponding PDF files from a server, and display them in the browser. The application uses a JSON file as a data source for questions, answers, and PDF URLs. It includes a simple Express server to handle CORS and serve PDF files.
-This project is created as part of an Internship Assessment.
+This project is a replication task created for an internship assessment. It is a web application built with React and Node.js that enables users to enter text, retrieve answers and context with its related PDF files from a server, and display them directly in the browser. The application utilizes a JSON file to provide questions, answers, and PDF URLs as its data source. It also features a basic Express server to manage CORS and serve PDF files.
 ## Features
 
 - **Interactive Chat Interface**: Users can input questions and receive answers along with relevant PDF sources.
