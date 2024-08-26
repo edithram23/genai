@@ -90,3 +90,7 @@ This project utilizes the LangChain framework along with OpenAI's language model
 2. Upload a PDF file containing an earnings call transcript.
 
 3. Use the navigation buttons to perform tasks such as extracting speaker-specific text, identifying key topics, and summarizing content.
+
+## Output Reference Image
+
+![image](https://github.com/user-attachments/assets/61fc64d0-b1a1-43a2-9da7-e649bd8857ba)
