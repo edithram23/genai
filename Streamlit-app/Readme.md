@@ -9,7 +9,6 @@ This project is a replication task developed for an internship. It involves anal
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
-- [License](#license)
 
 ## Overview
 
